@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
-    private int numberTable;
+    private int numberFieldInTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        EditText editText = findViewById(R.id.NumberTable);
+        EditText editText = findViewById(R.id.numberFieldInTable);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
                 try {
-                    numberTable = Integer.parseInt(editable.toString().trim());
+                    numberFieldInTable = Integer.parseInt(editable.toString().trim());
                 }catch (NumberFormatException e) {
-                    numberTable = 0;
+                    numberFieldInTable = 0;
                 }
             }
         });
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void goToTable(View view) {
-        if(numberTable != 0){
+        if(numberFieldInTable != 0 && numberFieldInTable >= 1){
             Intent intent = new Intent(this, TableActivity.class);
             startActivity(intent);
         }else {
