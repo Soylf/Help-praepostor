@@ -3,10 +3,12 @@ package com.example.helppraepostor.service;
 import com.example.helppraepostor.adapter.ItemStudentAdapter;
 import com.example.helppraepostor.model.ItemStudent;
 
+import java.util.List;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class TableServiceImpl implements TableService{
+public class ServiceImpl implements Service {
     private ItemStudentAdapter adapter;
 
     @Override
@@ -25,7 +27,7 @@ public class TableServiceImpl implements TableService{
     }
 
     @Override
-    public ItemStudent getItemStudents() {
+    public List<ItemStudent> getItemStudents() {
         return null;
     }
 }

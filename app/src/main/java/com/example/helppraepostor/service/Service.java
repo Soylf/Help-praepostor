@@ -2,9 +2,11 @@ package com.example.helppraepostor.service;
 
 import com.example.helppraepostor.model.ItemStudent;
 
-public interface TableService {
+import java.util.List;
+
+public interface Service {
     void saveStudent(ItemStudent student);
     void deleteStudent(String name);
     void deleteStudents();
-    ItemStudent getItemStudents();
+    List<ItemStudent> getItemStudents();
 }
