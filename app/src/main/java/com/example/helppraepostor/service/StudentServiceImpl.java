@@ -8,7 +8,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class ServiceImpl implements Service {
+public class StudentServiceImpl implements StudentService {
     private ItemStudentAdapter adapter;
 
     @Override
