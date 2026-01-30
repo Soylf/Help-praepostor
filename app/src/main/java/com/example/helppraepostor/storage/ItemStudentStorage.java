@@ -10,7 +10,6 @@ import lombok.Builder;
 @Builder
 public class ItemStudentStorage {
     private static final ItemStudentStorage INSTANCE = ItemStudentStorage.builder().build();
-    @Builder.Default
     private Map<String, ItemStudent> itemStudentMap;
 
     public static Map<String, ItemStudent> getItemStudentMap() {
