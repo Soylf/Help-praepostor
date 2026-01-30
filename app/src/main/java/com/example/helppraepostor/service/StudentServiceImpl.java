@@ -15,9 +15,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void saveStudent(@NotNull ItemStudent student) {
-        ItemStudentStorage.setItemStudentMap(
-                transformInMap(student.getName(), student)
-        );
+        ItemStudentStorage.setItemStudentMap(student.getName(), student);
     }
 
     @Override
@@ -31,7 +29,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Map<String,ItemStudent> getItemStudents() {
+    public Map<String, ItemStudent> getItemStudents() {
         return ItemStudentStorage.getItemStudentMap();
     }
 
