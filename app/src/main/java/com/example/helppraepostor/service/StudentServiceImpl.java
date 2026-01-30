@@ -5,7 +5,9 @@ import com.example.helppraepostor.storage.ItemStudentStorage;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import lombok.RequiredArgsConstructor;
@@ -29,8 +31,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Map<String, ItemStudent> getItemStudents() {
-        return ItemStudentStorage.getItemStudentMap();
+    public List<ItemStudent> getItemStudents() {
+        return new ArrayList<>(ItemStudentStorage.getItemStudentMap().values());
     }
 
     private Map<String, ItemStudent> transformInMap(String keyNameStudent, ItemStudent itemStudent) {
