@@ -18,6 +18,7 @@ import com.example.helppraepostor.model.ItemStudent;
 import com.example.helppraepostor.service.StudentService;
 import com.example.helppraepostor.service.factory.ServiceFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -37,16 +38,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         studentService = ServiceFactory.studentService();
 
-        if(!studentService.getItemStudents().isEmpty()){
-            RecyclerView studentsRecycler =
-                    findViewById(R.id.studentsRecycler);
-            List<ItemStudent> students =
-                    studentService.getItemStudents();
+        RecyclerView studentsRecycler = findViewById(R.id.studentsRecycler);
+        itemStudentAdapter = new ItemStudentAdapter(new ArrayList<>());
+        studentsRecycler.setLayoutManager(new LinearLayoutManager(this));
+        studentsRecycler.setAdapter(itemStudentAdapter);
 
-            itemStudentAdapter =
-                    new ItemStudentAdapter(students);
-            studentsRecycler.setLayoutManager(new LinearLayoutManager(this));
-            studentsRecycler.setAdapter(itemStudentAdapter);
+        List<ItemStudent> students = studentService.getItemStudents();
+        if (!students.isEmpty()) {
+            itemStudentAdapter.setStudentPrecedency(students);
         }
     }
 
