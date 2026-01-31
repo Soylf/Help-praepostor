@@ -27,7 +27,6 @@ public class ItemStudentStorage {
     }
 
     public static void deleteByKey(String name) {
-        checkKeyStudentNameUnique(name);
         INSTANCE.itemStudentMap.remove(name);
     }
 
