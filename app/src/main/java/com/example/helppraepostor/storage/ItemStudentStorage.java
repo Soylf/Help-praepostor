@@ -2,6 +2,7 @@ package com.example.helppraepostor.storage;
 
 import com.example.helppraepostor.model.ItemStudent;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import lombok.Builder;
@@ -10,7 +11,7 @@ import lombok.Builder;
 @Builder
 public class ItemStudentStorage {
     private static final ItemStudentStorage INSTANCE = ItemStudentStorage.builder().build();
-    private Map<String, ItemStudent> itemStudentMap;
+    private final Map<String, ItemStudent> itemStudentMap = new HashMap<>();
 
     public static Map<String, ItemStudent> getItemStudentMap() {
         return INSTANCE.itemStudentMap;

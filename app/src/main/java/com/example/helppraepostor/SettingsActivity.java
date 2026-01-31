@@ -16,12 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.helppraepostor.adapter.ItemStudentAdapter;
 import com.example.helppraepostor.model.ItemStudent;
 import com.example.helppraepostor.service.StudentService;
+import com.example.helppraepostor.service.factory.ServiceFactory;
 
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
 public class SettingsActivity extends AppCompatActivity {
     private StudentService studentService;
     private ItemStudentAdapter itemStudentAdapter;
@@ -37,15 +35,19 @@ public class SettingsActivity extends AppCompatActivity {
             return insets;
         });
 
-        RecyclerView studentsRecycler =
-                findViewById(R.id.studentsRecycler);
-        List<ItemStudent> students =
-                studentService.getItemStudents();
+        studentService = ServiceFactory.studentService();
 
-        itemStudentAdapter =
-                new ItemStudentAdapter(students);
-        studentsRecycler.setLayoutManager(new LinearLayoutManager(this));
-        studentsRecycler.setAdapter(itemStudentAdapter);
+        if(!studentService.getItemStudents().isEmpty()){
+            RecyclerView studentsRecycler =
+                    findViewById(R.id.studentsRecycler);
+            List<ItemStudent> students =
+                    studentService.getItemStudents();
+
+            itemStudentAdapter =
+                    new ItemStudentAdapter(students);
+            studentsRecycler.setLayoutManager(new LinearLayoutManager(this));
+            studentsRecycler.setAdapter(itemStudentAdapter);
+        }
     }
 
     public void goToHome(View view) {
@@ -61,14 +63,16 @@ public class SettingsActivity extends AppCompatActivity {
         student.setName(name.getText().toString());
         student.setAge(age.getText().toString().trim());
 
-        List<ItemStudent> selected = itemStudentAdapter.getSelectedStudents();
+        if(!studentService.getItemStudents().isEmpty()){
+            List<ItemStudent> selected = itemStudentAdapter.getSelectedStudents();
+            student.setStudentsPrecedency(selected);
 
-        student.setStudentsPrecedency(selected);
+            List<ItemStudent> students =
+                    studentService.getItemStudents();
+
+            itemStudentAdapter.setStudentPrecedency(students);
+        }
 
         studentService.saveStudent(student);
-
-        List<ItemStudent> students =
-                studentService.getItemStudents();
-        itemStudentAdapter.setStudentPrecedency(students);
     }
 }

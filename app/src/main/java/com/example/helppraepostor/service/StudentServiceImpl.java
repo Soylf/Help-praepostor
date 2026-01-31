@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class StudentServiceImpl implements StudentService {
 
     @Override
@@ -41,5 +41,4 @@ public class StudentServiceImpl implements StudentService {
         itemStudentMap.put(keyNameStudent, itemStudent);
         return itemStudentMap;
     }
-
 }
