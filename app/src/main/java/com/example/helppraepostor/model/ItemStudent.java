@@ -14,6 +14,6 @@ import lombok.Setter;
 public class ItemStudent {
     private String name;
     private String age;
-    private boolean selected;
+    private boolean selected; //Нужен только в UI
     private List<ItemStudent> studentsPrecedency;
 }

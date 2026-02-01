@@ -36,14 +36,19 @@ public class SettingsActivity extends AppCompatActivity {
             return insets;
         });
 
-        studentService = ServiceFactory.studentService();
+        studentService = ServiceFactory.getStudentService(this);
 
         RecyclerView studentsRecycler = findViewById(R.id.studentsRecycler);
         itemStudentAdapter = new ItemStudentAdapter(new ArrayList<>());
         studentsRecycler.setLayoutManager(new LinearLayoutManager(this));
         studentsRecycler.setAdapter(itemStudentAdapter);
 
-        List<ItemStudent> students = studentService.getItemStudents();
+        List<ItemStudent> students;
+        try {
+            students = studentService.getItemStudents();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         if (!students.isEmpty()) {
             itemStudentAdapter.setStudentPrecedency(students);
         }
@@ -54,7 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void saveStudentItem(View view) {
+    public void saveStudentItem(View view) throws InterruptedException {
         ItemStudent student = new ItemStudent();
         EditText name = findViewById(R.id.editTextNameStudent);
         EditText age = findViewById(R.id.editTextAgeStudent);

@@ -8,5 +8,5 @@ public interface StudentService {
     void saveStudent(ItemStudent student);
     void deleteStudent(String name);
     void deleteStudents();
-    List<ItemStudent> getItemStudents();
+    List<ItemStudent> getItemStudents() throws InterruptedException;
 }

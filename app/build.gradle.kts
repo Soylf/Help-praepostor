@@ -46,4 +46,7 @@ dependencies {
     compileOnly(libs.lombok)
     annotationProcessor(libs.lombok)
     implementation(libs.core.ktx)
+
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
 }

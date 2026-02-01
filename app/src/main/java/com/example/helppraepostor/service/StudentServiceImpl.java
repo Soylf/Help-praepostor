@@ -1,44 +1,45 @@
 package com.example.helppraepostor.service;
 
+import android.content.Context;
+
 import com.example.helppraepostor.model.ItemStudent;
-import com.example.helppraepostor.storage.ItemStudentStorage;
+import com.example.helppraepostor.repository.ItemStudentRepository;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor
 public class StudentServiceImpl implements StudentService {
+    private final ItemStudentRepository repository;
+
+    public StudentServiceImpl(Context context) {
+        this.repository = new ItemStudentRepository(context);
+    }
 
     @Override
     public void saveStudent(@NotNull ItemStudent student) {
-        ItemStudentStorage.setItemStudentMap(student.getName(), student);
+        repository.save(student);
     }
 
     @Override
     public void deleteStudent(String name) {
-        ItemStudentStorage.deleteByKey(name);
+        repository.deleteById(name);
     }
 
     @Override
     public void deleteStudents() {
-        ItemStudentStorage.deleteAll();
+        repository.deleteAll();
     }
 
     @Override
-    public List<ItemStudent> getItemStudents() {
-        return new ArrayList<>(ItemStudentStorage.getItemStudentMap().values());
+    public List<ItemStudent> getItemStudents() throws InterruptedException {
+       return repository.getAll();
     }
 
-    private Map<String, ItemStudent> transformInMap(String keyNameStudent, ItemStudent itemStudent) {
-        Map<String, ItemStudent> itemStudentMap = new HashMap<>();
-        ItemStudentStorage.checkKeyStudentNameUnique(keyNameStudent);
-        itemStudentMap.put(keyNameStudent, itemStudent);
-        return itemStudentMap;
-    }
+//    private Map<String, ItemStudent> transformInMap(String keyNameStudent, ItemStudent itemStudent) {
+//        Map<String, ItemStudent> itemStudentMap = new HashMap<>();
+//        ItemStudentStorage.checkKeyStudentNameUnique(keyNameStudent);
+//        itemStudentMap.put(keyNameStudent, itemStudent);
+//        return itemStudentMap;
+//    }
 }
