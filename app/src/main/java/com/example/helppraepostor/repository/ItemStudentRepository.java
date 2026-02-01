@@ -2,7 +2,7 @@ package com.example.helppraepostor.repository;
 
 import android.content.Context;
 
-import com.example.helppraepostor.database.AppDatabase;
+import com.example.helppraepostor.database.ItemStudentDatabase;
 import com.example.helppraepostor.model.ItemStudent;
 import com.example.helppraepostor.model.room.dao.ItemStudentDao;
 import com.example.helppraepostor.model.room.entity.ItemStudentEntity;
@@ -16,7 +16,7 @@ public class ItemStudentRepository {
     private final ItemStudentDao dao;
 
     public ItemStudentRepository(Context context) {
-        this.dao = AppDatabase.getInstance(context).studentDao();
+        this.dao = ItemStudentDatabase.getInstance(context).studentDao();
     }
 
     public void save(ItemStudent itemStudent) {

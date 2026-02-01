@@ -9,10 +9,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class StudentServiceImpl implements StudentService {
+public class ItemStudentServiceImpl implements ItemStudentService {
     private final ItemStudentRepository repository;
 
-    public StudentServiceImpl(Context context) {
+    public ItemStudentServiceImpl(Context context) {
         this.repository = new ItemStudentRepository(context);
     }
 

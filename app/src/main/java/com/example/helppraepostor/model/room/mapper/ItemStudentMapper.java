@@ -1,6 +1,6 @@
 package com.example.helppraepostor.model.room.mapper;
 
-import com.example.helppraepostor.converter.ItemStudentConverters;
+import com.example.helppraepostor.converter.ItemStudentConvertersGson;
 import com.example.helppraepostor.model.ItemStudent;
 import com.example.helppraepostor.model.room.entity.ItemStudentEntity;
 
@@ -10,7 +10,7 @@ public class ItemStudentMapper {
         itemStudentEntity.setName(itemStudent.getName());
         itemStudentEntity.setAge(itemStudent.getAge());
         itemStudentEntity.setStudentsPrecedencyJson(
-                ItemStudentConverters.fromList(itemStudent.getStudentsPrecedency())
+                ItemStudentConvertersGson.fromList(itemStudent.getStudentsPrecedency())
         );
         return itemStudentEntity;
     }
@@ -20,7 +20,7 @@ public class ItemStudentMapper {
         itemStudent.setAge(itemStudentEntity.getAge());
         itemStudent.setName(itemStudentEntity.getName());
         itemStudent.setStudentsPrecedency(
-                ItemStudentConverters.toList(itemStudentEntity.getStudentsPrecedencyJson())
+                ItemStudentConvertersGson.toList(itemStudentEntity.getStudentsPrecedencyJson())
         );
         return itemStudent;
     }

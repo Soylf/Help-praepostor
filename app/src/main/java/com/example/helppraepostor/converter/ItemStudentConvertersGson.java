@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ItemStudentConverters {
+public class ItemStudentConvertersGson {
     private static final Gson gson = new Gson();
 
     @TypeConverter

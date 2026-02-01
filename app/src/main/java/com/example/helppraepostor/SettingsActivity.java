@@ -15,14 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.helppraepostor.adapter.ItemStudentAdapter;
 import com.example.helppraepostor.model.ItemStudent;
-import com.example.helppraepostor.service.StudentService;
-import com.example.helppraepostor.service.factory.ServiceFactory;
+import com.example.helppraepostor.service.ItemStudentService;
+import com.example.helppraepostor.service.factory.ItemStudentServiceFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SettingsActivity extends AppCompatActivity {
-    private StudentService studentService;
+    private ItemStudentService itemStudentService;
     private ItemStudentAdapter itemStudentAdapter;
 
     @Override
@@ -36,7 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
             return insets;
         });
 
-        studentService = ServiceFactory.getStudentService(this);
+        itemStudentService = ItemStudentServiceFactory.getStudentService(this);
 
         RecyclerView studentsRecycler = findViewById(R.id.studentsRecycler);
         itemStudentAdapter = new ItemStudentAdapter(new ArrayList<>());
@@ -45,7 +45,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         List<ItemStudent> students;
         try {
-            students = studentService.getItemStudents();
+            students = itemStudentService.getItemStudents();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -67,16 +67,16 @@ public class SettingsActivity extends AppCompatActivity {
         student.setName(name.getText().toString());
         student.setAge(age.getText().toString().trim());
 
-        if(!studentService.getItemStudents().isEmpty()){
+        if(!itemStudentService.getItemStudents().isEmpty()){
             List<ItemStudent> selected = itemStudentAdapter.getSelectedStudents();
             student.setStudentsPrecedency(selected);
 
             List<ItemStudent> students =
-                    studentService.getItemStudents();
+                    itemStudentService.getItemStudents();
 
             itemStudentAdapter.setStudentPrecedency(students);
         }
 
-        studentService.saveStudent(student);
+        itemStudentService.saveStudent(student);
     }
 }

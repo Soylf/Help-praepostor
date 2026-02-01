@@ -7,25 +7,25 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import com.example.helppraepostor.converter.ItemStudentConverters;
+import com.example.helppraepostor.converter.ItemStudentConvertersGson;
 import com.example.helppraepostor.model.room.dao.ItemStudentDao;
 import com.example.helppraepostor.model.room.entity.ItemStudentEntity;
 
 @Database(entities = {ItemStudentEntity.class}, version = 1, exportSchema = false)
-@TypeConverters(ItemStudentConverters.class)
-public abstract class AppDatabase extends RoomDatabase {
+@TypeConverters(ItemStudentConvertersGson.class)
+public abstract class ItemStudentDatabase extends RoomDatabase {
 
-    private static volatile AppDatabase INSTANCE;
+    private static volatile ItemStudentDatabase INSTANCE;
 
     public abstract ItemStudentDao studentDao();
 
-    public static AppDatabase getInstance(Context context) {
+    public static ItemStudentDatabase getInstance(Context context) {
         if (INSTANCE == null) {
-            synchronized (AppDatabase.class) {
+            synchronized (ItemStudentDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(
                             context.getApplicationContext(),
-                            AppDatabase.class,
+                            ItemStudentDatabase.class,
                             "item_students_db"
                     ).build();
                 }
