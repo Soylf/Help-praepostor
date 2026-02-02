@@ -59,6 +59,11 @@ public class SettingsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToInfo(View view) {
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+    }
+
     public void saveStudentItem(View view) throws InterruptedException {
         ItemStudent student = new ItemStudent();
         EditText name = findViewById(R.id.editTextNameStudent);

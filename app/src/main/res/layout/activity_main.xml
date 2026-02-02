@@ -9,12 +9,12 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/btnSettings"
+        android:id="@+id/btnHome"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="8dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Настройки"
+        android:contentDescription="Домой"
         android:onClick="goToSetting"
         android:scaleType="centerInside"
         android:src="@drawable/baseline_settings_24"
@@ -22,15 +22,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="#E6E6E6" />
 
+
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Инфо"
+        android:onClick="goToInfo"
+        android:scaleType="centerInside"
+        android:src="@drawable/baseline_info_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnHome"
+        app:tint="#E6E6E6" />
+
 <androidx.constraintlayout.widget.ConstraintLayout
-android:id="@+id/constraintLayout"
-android:layout_width="348dp"
-android:layout_height="337dp"
-android:layout_marginBottom="175dp"
-android:background="@drawable/krugliye_ugli"
-app:layout_constraintBottom_toBottomOf="parent"
-app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent">
+    android:id="@+id/constraintLayout"
+    android:layout_width="348dp"
+    android:layout_height="337dp"
+    android:layout_marginBottom="175dp"
+    android:background="@drawable/krugliye_ugli"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
 
     <EditText
         android:id="@+id/numberFieldInTable"

@@ -56,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
+
+    public void goToInfo(View view) {
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+    }
+
     public void goToTable(View view) {
         if(numberFieldInTable != 0 && numberFieldInTable >= 1){
             Intent intent = new Intent(this, TableActivity.class);
