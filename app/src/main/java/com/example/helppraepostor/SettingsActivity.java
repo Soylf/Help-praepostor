@@ -109,13 +109,13 @@ public class SettingsActivity extends AppCompatActivity {
         if(!name.getText().toString().isEmpty() && !age.getText().toString().isEmpty()){
             itemStudentService.saveStudent(student);
             Snackbar.make(view, "Студент сохранен", Snackbar.LENGTH_SHORT)
-                    .setBackgroundTint(0XFF555553)
-                    .setActionTextColor(0XFF81C784)
+                    .setBackgroundTint(0xFF2C2B2A)
+                    .setTextColor(0xFFEAEAEA)
                     .show();
         }else {
             Snackbar.make(view,"Вы не ввели имя/возраст студента", Snackbar.LENGTH_SHORT)
-                    .setBackgroundTint(0XFF555553)
-                    .setActionTextColor(0XFF81C784)
+                    .setBackgroundTint(0xFF2C2B2A)
+                    .setTextColor(0xFFEAEAEA)
                     .show();
         }
     }
@@ -123,8 +123,8 @@ public class SettingsActivity extends AppCompatActivity {
     public void deleteAll(View view) {
         itemStudentService.deleteStudents();
         Snackbar.make(view,"Все студенты удалены", Snackbar.LENGTH_SHORT)
-                .setBackgroundTint(0XFF555553)
-                .setActionTextColor(0XFF81C784)
+                .setBackgroundTint(0xFF2C2B2A)
+                .setTextColor(0xFFEAEAEA)
                 .show();
     }
 
@@ -139,8 +139,8 @@ public class SettingsActivity extends AppCompatActivity {
             itemStudentService.deleteStudent(student.getName());
         });
         Snackbar.make(view,"Выбранные студенты удалены", Snackbar.LENGTH_SHORT)
-                .setBackgroundTint(0XFF555553)
-                .setActionTextColor(0XFF81C784)
+                .setBackgroundTint(0xFF2C2B2A)
+                .setTextColor(0xFFEAEAEA)
                 .show();
     }
 }
