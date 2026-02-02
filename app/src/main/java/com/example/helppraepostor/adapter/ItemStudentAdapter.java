@@ -47,7 +47,6 @@ public class ItemStudentAdapter extends RecyclerView.Adapter<ItemStudentAdapter.
             student.setSelected(!student.isSelected());
             holder.studentName.setSelected(student.isSelected());
         });
-
     }
 
     @Override

@@ -22,7 +22,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="#E6E6E6" />
 
-
     <ImageButton
         android:id="@+id/btnInfo"
         android:layout_width="48dp"
