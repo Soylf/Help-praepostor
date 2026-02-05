@@ -1,9 +1,9 @@
-package com.example.helppraepostor.service.factory;
+package com.example.helppraepostor.service.itemstudent.factory;
 
 import android.content.Context;
 
-import com.example.helppraepostor.service.ItemStudentService;
-import com.example.helppraepostor.service.ItemStudentServiceImpl;
+import com.example.helppraepostor.service.itemstudent.ItemStudentService;
+import com.example.helppraepostor.service.itemstudent.ItemStudentServiceImpl;
 
 public final class ItemStudentServiceFactory {
 

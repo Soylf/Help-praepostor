@@ -4,9 +4,9 @@ import android.content.Context;
 
 import com.example.helppraepostor.database.ItemStudentDatabase;
 import com.example.helppraepostor.model.ItemStudent;
-import com.example.helppraepostor.model.room.dao.ItemStudentDao;
-import com.example.helppraepostor.model.room.entity.ItemStudentEntity;
-import com.example.helppraepostor.model.room.mapper.ItemStudentMapper;
+import com.example.helppraepostor.model.room.itemstudent.dao.ItemStudentDao;
+import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntity;
+import com.example.helppraepostor.model.room.itemstudent.mapper.ItemStudentMapper;
 
 import java.util.ArrayList;
 import java.util.List;

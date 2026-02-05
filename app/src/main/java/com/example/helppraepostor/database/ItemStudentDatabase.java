@@ -8,8 +8,8 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import com.example.helppraepostor.converter.ItemStudentConvertersGson;
-import com.example.helppraepostor.model.room.dao.ItemStudentDao;
-import com.example.helppraepostor.model.room.entity.ItemStudentEntity;
+import com.example.helppraepostor.model.room.itemstudent.dao.ItemStudentDao;
+import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntity;
 
 @Database(entities = {ItemStudentEntity.class}, version = 1, exportSchema = false)
 @TypeConverters(ItemStudentConvertersGson.class)

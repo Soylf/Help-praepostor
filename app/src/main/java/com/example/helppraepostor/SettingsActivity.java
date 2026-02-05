@@ -19,8 +19,8 @@ import androidx.transition.TransitionManager;
 
 import com.example.helppraepostor.adapter.ItemStudentAdapter;
 import com.example.helppraepostor.model.ItemStudent;
-import com.example.helppraepostor.service.ItemStudentService;
-import com.example.helppraepostor.service.factory.ItemStudentServiceFactory;
+import com.example.helppraepostor.service.itemstudent.ItemStudentService;
+import com.example.helppraepostor.service.itemstudent.factory.ItemStudentServiceFactory;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;

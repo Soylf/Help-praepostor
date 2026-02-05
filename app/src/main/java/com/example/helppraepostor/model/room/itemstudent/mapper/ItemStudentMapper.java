@@ -1,8 +1,8 @@
-package com.example.helppraepostor.model.room.mapper;
+package com.example.helppraepostor.model.room.itemstudent.mapper;
 
 import com.example.helppraepostor.converter.ItemStudentConvertersGson;
 import com.example.helppraepostor.model.ItemStudent;
-import com.example.helppraepostor.model.room.entity.ItemStudentEntity;
+import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntity;
 
 public class ItemStudentMapper {
     public static ItemStudentEntity toEntity(ItemStudent itemStudent) {

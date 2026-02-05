@@ -1,4 +1,4 @@
-package com.example.helppraepostor.model.room.entity;
+package com.example.helppraepostor.model.room.itemstudent.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

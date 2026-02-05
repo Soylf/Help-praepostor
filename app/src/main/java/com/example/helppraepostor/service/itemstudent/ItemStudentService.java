@@ -1,4 +1,4 @@
-package com.example.helppraepostor.service;
+package com.example.helppraepostor.service.itemstudent;
 
 import com.example.helppraepostor.model.ItemStudent;
 

@@ -1,11 +1,11 @@
-package com.example.helppraepostor.model.room.dao;
+package com.example.helppraepostor.model.room.itemstudent.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.example.helppraepostor.model.room.entity.ItemStudentEntity;
+import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntity;
 
 import java.util.List;
 
