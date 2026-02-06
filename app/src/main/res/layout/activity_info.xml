@@ -8,6 +8,23 @@
     android:background="#222021"
     tools:context=".InfoActivity">
 
+    <View
+        android:id="@+id/topDecor"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/top_fade"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <View
+        android:id="@+id/bottomDecor"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bottom_fade"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <ImageButton
         android:id="@+id/btnHome"
         android:layout_width="48dp"

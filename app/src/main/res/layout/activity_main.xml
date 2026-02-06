@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,11 +9,29 @@
     android:background="#222021"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/topDecor"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/top_fade"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <View
+        android:id="@+id/bottomDecor"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bottom_fade"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
     <ImageButton
         android:id="@+id/btnHome"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="8dp"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_margin="12dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Домой"
         android:onClick="goToSetting"
@@ -24,10 +43,10 @@
 
     <ImageButton
         android:id="@+id/btnInfo"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Инфо"
         android:onClick="goToInfo"
@@ -37,42 +56,47 @@
         app:layout_constraintTop_toBottomOf="@id/btnHome"
         app:tint="#E6E6E6" />
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/constraintLayout"
-    android:layout_width="348dp"
-    android:layout_height="337dp"
-    android:layout_marginBottom="175dp"
-    android:background="@drawable/krugliye_ugli"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent">
-
-    <EditText
-        android:id="@+id/numberFieldInTable"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:backgroundTint="#988F3D"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="Введите кол-во полей"
-        android:textColor="#E6E6E6"
-        android:textColorHint="#BDBDBD"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="28dp"
+        android:padding="24dp"
+        android:background="@drawable/krugliye_ugli"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonTableStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:backgroundTint="#3A4F7A"
-        android:onClick="goToTable"
-        android:text="Перейти..."
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <EditText
+            android:id="@+id/numberFieldInTable"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:hint="Количество полей"
+            android:inputType="number"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#9E9E9E"
+            android:backgroundTint="#988F3D"
+            android:gravity="center"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonTableStart"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#3A4F7A"
+            android:onClick="goToTable"
+            android:text="Сгенерировать"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/numberFieldInTable" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
