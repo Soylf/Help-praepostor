@@ -47,13 +47,16 @@ public class SettingsActivity extends AppCompatActivity {
 
         ConstraintLayout rootLayout = findViewById(R.id.main);
         ConstraintLayout settingsLayout = findViewById(R.id.settingsLayout);
+        ConstraintLayout constraintLayoutSave = findViewById(R.id.constraintLayoutSave);
         Button buttonAddStudentItem = findViewById(R.id.buttonAddStudentItem);
         buttonAddStudentItem.setOnClickListener(v -> {
             TransitionManager.beginDelayedTransition(rootLayout, new AutoTransition());
             if (settingsLayout.getVisibility() == View.VISIBLE) {
                 settingsLayout.setVisibility(View.GONE);
+                constraintLayoutSave.setVisibility(View.VISIBLE);
             } else {
                 settingsLayout.setVisibility(View.VISIBLE);
+                constraintLayoutSave.setVisibility(View.INVISIBLE);
             }
         });
         itemStudentAdapter = new ItemStudentAdapter(new ArrayList<>());
