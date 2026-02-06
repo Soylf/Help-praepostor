@@ -38,4 +38,7 @@ public class TableActivity extends AppCompatActivity {
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
+
+    public void goToListStudent(View view) {
+    }
 }

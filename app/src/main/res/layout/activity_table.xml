@@ -67,6 +67,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="#E6E6E6" />
 
+    <ImageButton
+        android:id="@+id/btnAllStudent"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Домой"
+        android:onClick="goToListStudent"
+        android:scaleType="centerInside"
+        android:src="@drawable/baseline_notes_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#E6E6E6" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutTable"
         android:layout_width="409dp"
