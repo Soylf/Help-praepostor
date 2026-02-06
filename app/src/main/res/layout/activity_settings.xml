@@ -155,7 +155,7 @@
                 android:layout_marginTop="12dp"
                 android:backgroundTint="#3A4F7A"
                 android:onClick="deleteAll"
-                android:text="Удалить все студентов"
+                android:text="Удалить всех студентов"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
