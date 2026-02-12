@@ -68,21 +68,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <EditText
-            android:id="@+id/numberFieldInTable"
-            android:layout_width="0dp"
-            android:layout_height="64dp"
-            android:hint="Количество полей"
-            android:inputType="number"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#9E9E9E"
-            android:backgroundTint="#988F3D"
-            android:gravity="center"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
             android:id="@+id/buttonTableStart"
             android:layout_width="0dp"
@@ -95,8 +80,7 @@
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/numberFieldInTable" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

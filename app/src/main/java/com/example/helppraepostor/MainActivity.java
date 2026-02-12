@@ -16,8 +16,6 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
-    private int numberFieldInTable;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,28 +25,6 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
-
-        EditText editText = findViewById(R.id.numberFieldInTable);
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                try {
-                    numberFieldInTable = Integer.parseInt(editable.toString().trim());
-                }catch (NumberFormatException e) {
-                    numberFieldInTable = 0;
-                }
-            }
         });
     }
 
@@ -63,11 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToTable(View view) {
-        if(numberFieldInTable != 0 && numberFieldInTable >= 1){
-            Intent intent = new Intent(this, TableActivity.class);
-            startActivity(intent);
-        }else {
-            Snackbar.make(view,"Введите число полей", Snackbar.LENGTH_SHORT).setBackgroundTint(0XFF555553).show();
-        }
+        Intent intent = new Intent(this, TableActivity.class);
+        startActivity(intent);
     }
 }

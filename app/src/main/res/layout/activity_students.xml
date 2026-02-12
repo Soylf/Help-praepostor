@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#222021"
-    tools:context=".TableActivity">
+    tools:context=".StudentsActivity">
 
     <View
         android:id="@+id/topDecor"
@@ -67,51 +67,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="#E6E6E6" />
 
-    <TextView
-        android:id="@+id/tvMonthAndYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:text=""
-        android:textColor="#E6E6E6"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/calendarRecyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnPrevMonth"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/baseline_arrow_left_24"
-        app:layout_constraintBottom_toTopOf="@+id/calendarRecyclerView"
-        app:layout_constraintEnd_toStartOf="@+id/btnNextMonth"
-        app:tint="#E6E6E6" />
-
-    <ImageButton
-        android:id="@+id/btnNextMonth"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="16dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/baseline_arrow_right_24"
-        app:layout_constraintBottom_toTopOf="@+id/calendarRecyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="#E6E6E6" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/calendarRecyclerView"
-        android:layout_width="388dp"
-        android:layout_height="368dp"
-        android:layout_marginBottom="72dp"
-        android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@id/bottomDecor"
+        android:id="@+id/allStudents"
+        android:layout_width="301dp"
+        android:layout_height="478dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomDecor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topDecor"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintTop_toBottomOf="@+id/topDecor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
