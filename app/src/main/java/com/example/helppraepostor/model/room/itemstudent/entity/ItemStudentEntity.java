@@ -20,4 +20,5 @@ public class ItemStudentEntity {
     private String age;
     @ColumnInfo(name = "precedency_json")
     private String studentsPrecedencyJson;
+    private boolean presentStudent; //Есть в колледже или нет
 }

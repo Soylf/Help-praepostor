@@ -22,6 +22,11 @@ public class ItemStudentServiceImpl implements ItemStudentService {
     }
 
     @Override
+    public void updateStudent(ItemStudent student) {
+        repository.update(student);
+    }
+
+    @Override
     public void deleteStudent(String name) {
         repository.deleteById(name);
     }

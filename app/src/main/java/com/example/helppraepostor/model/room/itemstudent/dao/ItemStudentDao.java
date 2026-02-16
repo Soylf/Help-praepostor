@@ -5,6 +5,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
+import com.example.helppraepostor.model.ItemStudent;
 import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntity;
 
 import java.util.List;
@@ -22,4 +23,14 @@ public interface ItemStudentDao {
 
     @Query("DELETE FROM students")
     void deleteAll();
+
+    @Query("UPDATE students SET age = :age, " +
+            "precedency_json = :precedencyJson, " +
+            "presentStudent = :presentStudent " +
+            "WHERE name = :name")
+    int updateByName(String name,
+                     String age,
+                     String precedencyJson,
+                     boolean presentStudent);
+
 }

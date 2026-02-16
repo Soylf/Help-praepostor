@@ -9,6 +9,7 @@ public class ItemStudentMapper {
         ItemStudentEntity itemStudentEntity = new ItemStudentEntity();
         itemStudentEntity.setName(itemStudent.getName());
         itemStudentEntity.setAge(itemStudent.getAge());
+        itemStudentEntity.setPresentStudent(itemStudent.isPresentStudent());
         itemStudentEntity.setStudentsPrecedencyJson(
                 ItemStudentConvertersGson.fromList(itemStudent.getStudentsPrecedency())
         );
@@ -19,6 +20,7 @@ public class ItemStudentMapper {
         ItemStudent itemStudent = new ItemStudent();
         itemStudent.setAge(itemStudentEntity.getAge());
         itemStudent.setName(itemStudentEntity.getName());
+        itemStudent.setPresentStudent(itemStudentEntity.isPresentStudent());
         itemStudent.setStudentsPrecedency(
                 ItemStudentConvertersGson.toList(itemStudentEntity.getStudentsPrecedencyJson())
         );

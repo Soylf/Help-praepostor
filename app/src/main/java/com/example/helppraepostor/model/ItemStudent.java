@@ -16,4 +16,5 @@ public class ItemStudent {
     private String age;
     private boolean selected; //Нужен только в UI
     private List<ItemStudent> studentsPrecedency;
+    private boolean presentStudent;
 }

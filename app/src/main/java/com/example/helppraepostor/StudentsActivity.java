@@ -10,13 +10,11 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.helppraepostor.adapter.ItemStudentAdapter;
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.adapter.ItemStudentPresentAdapter;
 import com.example.helppraepostor.service.itemstudent.ItemStudentService;
 import com.example.helppraepostor.service.itemstudent.factory.ItemStudentServiceFactory;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class StudentsActivity extends AppCompatActivity {
     @Override
@@ -33,14 +31,15 @@ public class StudentsActivity extends AppCompatActivity {
         ItemStudentService studentService = ItemStudentServiceFactory.getStudentService(this);
 
         RecyclerView recyclerView = findViewById(R.id.allStudents);
-        ItemStudentAdapter itemStudentAdapter = new ItemStudentAdapter(new ArrayList<>());
+        ItemStudentPresentAdapter ItemStudentPresentAdapter = new ItemStudentPresentAdapter(new ArrayList<>(),
+                studentService);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         try {
-            itemStudentAdapter.setStudentPrecedency(studentService.getItemStudents());
+            ItemStudentPresentAdapter.setStudentPrecedency(studentService.getItemStudents());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        recyclerView.setAdapter(itemStudentAdapter);
+        recyclerView.setAdapter(ItemStudentPresentAdapter);
     }
 }
