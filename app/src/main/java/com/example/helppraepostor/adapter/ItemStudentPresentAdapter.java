@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.helppraepostor.R;
 import com.example.helppraepostor.model.ItemStudent;
 import com.example.helppraepostor.service.itemstudent.ItemStudentService;
-import com.example.helppraepostor.service.itemstudent.ItemStudentServiceImpl;
 
 import org.jetbrains.annotations.NotNull;
 
