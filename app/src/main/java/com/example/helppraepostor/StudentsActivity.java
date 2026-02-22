@@ -10,7 +10,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.helppraepostor.adapter.ItemStudentPresentAdapter;
+import com.example.helppraepostor.adapter.ItemStudentAdapter;
 import com.example.helppraepostor.service.itemstudent.ItemStudentService;
 import com.example.helppraepostor.service.itemstudent.factory.ItemStudentServiceFactory;
 
@@ -31,8 +31,7 @@ public class StudentsActivity extends AppCompatActivity {
         ItemStudentService studentService = ItemStudentServiceFactory.getStudentService(this);
 
         RecyclerView recyclerView = findViewById(R.id.allStudents);
-        ItemStudentPresentAdapter ItemStudentPresentAdapter = new ItemStudentPresentAdapter(new ArrayList<>(),
-                studentService);
+        ItemStudentAdapter ItemStudentPresentAdapter = new ItemStudentAdapter(new ArrayList<>());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         try {
             ItemStudentPresentAdapter.setStudentPrecedency(studentService.getItemStudents());
