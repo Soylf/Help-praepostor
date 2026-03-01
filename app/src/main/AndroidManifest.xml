@@ -13,9 +13,6 @@
         android:theme="@style/Theme.HelpPraepostor"
         tools:targetApi="31">
         <activity
-            android:name=".StudentsActivity"
-            android:exported="false" />
-        <activity
             android:name=".InfoActivity"
             android:exported="false" />
         <activity
