@@ -20,5 +20,5 @@ public class ItemDay {
         this.isCurrentMonth = isCurrentMonth;
     }
 
-        public String ItemData() {return String.format("%s %s %s", day,month,year);}
+        public String ItemData() {return String.format("%s %s %s", day,month+1,year);}
 }

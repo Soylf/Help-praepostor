@@ -54,7 +54,9 @@ public class TableCalendarAdapter extends RecyclerView.Adapter<TableCalendarAdap
             selectedPosition = holder.getAdapterPosition();
             ItemDay itemSelectedDay = days.get(selectedPosition);
 
-            notifyItemChanged(oldPosition);
+            if (oldPosition != -1) {
+                notifyItemChanged(oldPosition);
+            }
             notifyItemChanged(selectedPosition);
 
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
