@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.helppraepostor.R;
+import com.example.helppraepostor.model.ItemDay;
 import com.example.helppraepostor.model.ItemStudent;
 
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +22,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ItemStudentAttendanceAdapter extends RecyclerView.Adapter<ItemStudentAttendanceAdapter.ViewHolder> {
     private List<ItemStudent> itemStudents;
+    private String itemSelectedDay;
 
     public void setStudentPrecedency(@NotNull List<ItemStudent> itemStudents) {
         this.itemStudents.clear();

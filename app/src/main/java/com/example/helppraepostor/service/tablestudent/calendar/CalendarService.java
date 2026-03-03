@@ -1,4 +1,4 @@
-package com.example.helppraepostor.service.tablestudent;
+package com.example.helppraepostor.service.tablestudent.calendar;
 
 import com.example.helppraepostor.model.ItemDay;
 

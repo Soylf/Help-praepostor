@@ -52,6 +52,7 @@ public class TableCalendarAdapter extends RecyclerView.Adapter<TableCalendarAdap
         holder.itemView.setOnClickListener(v -> {
             int oldPosition = selectedPosition;
             selectedPosition = holder.getAdapterPosition();
+            ItemDay itemSelectedDay = days.get(selectedPosition);
 
             notifyItemChanged(oldPosition);
             notifyItemChanged(selectedPosition);
@@ -73,7 +74,7 @@ public class TableCalendarAdapter extends RecyclerView.Adapter<TableCalendarAdap
 
             RecyclerView recyclerViewAttendanceDay = sheetView.findViewById(R.id.RecyclerViewAttendanceDay);
             recyclerViewAttendanceDay.setLayoutManager(new LinearLayoutManager(context));
-            ItemStudentAttendanceAdapter itemStudentAttendanceAdapter = new ItemStudentAttendanceAdapter(itemStudents);
+            ItemStudentAttendanceAdapter itemStudentAttendanceAdapter = new ItemStudentAttendanceAdapter(itemStudents, itemSelectedDay.ItemData());
             recyclerViewAttendanceDay.setAdapter(itemStudentAttendanceAdapter);
 
             bottomSheetDialog.show();

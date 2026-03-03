@@ -18,8 +18,8 @@ import com.example.helppraepostor.adapter.TableCalendarAdapter;
 import com.example.helppraepostor.model.ItemDay;
 import com.example.helppraepostor.model.ItemStudent;
 import com.example.helppraepostor.service.itemstudent.factory.ItemStudentServiceFactory;
-import com.example.helppraepostor.service.tablestudent.CalendarService;
-import com.example.helppraepostor.service.tablestudent.factory.CalendarServiceFactory;
+import com.example.helppraepostor.service.tablestudent.calendar.CalendarService;
+import com.example.helppraepostor.service.tablestudent.calendar.factory.CalendarServiceFactory;
 
 import java.util.List;
 
@@ -43,18 +43,17 @@ public class TableActivity extends AppCompatActivity {
         calendarService.getCurrentMonth();
         calendarService.getCurrentYear();
         itemDays = calendarService.generatedMonth();
-
         TextView tvMonthAndYear = findViewById(R.id.tvMonthAndYear);
         tvMonthAndYear.setText(calendarService.getMonthAndYear());
 
-        RecyclerView calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         List<ItemStudent> itemStudents;
-        calendarRecyclerView.setLayoutManager(new GridLayoutManager(this, 7));
         try {
             itemStudents = ItemStudentServiceFactory.getStudentService(this).getItemStudents();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        RecyclerView calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
+        calendarRecyclerView.setLayoutManager(new GridLayoutManager(this, 7));
         TableCalendarAdapter adapter = new TableCalendarAdapter(this, itemDays, itemStudents);
         calendarRecyclerView.setAdapter(adapter);
 
@@ -63,7 +62,9 @@ public class TableActivity extends AppCompatActivity {
             calendarService.prevMonth();
             calendarService.getCurrentMonth();
             calendarService.getCurrentYear();
+
             itemDays = calendarService.generatedMonth();
+
             tvMonthAndYear.setText(calendarService.getMonthAndYear());
             adapter.setDays(itemDays);
         });
@@ -73,7 +74,9 @@ public class TableActivity extends AppCompatActivity {
             calendarService.nextMonth();
             calendarService.getCurrentMonth();
             calendarService.getCurrentYear();
+
             itemDays = calendarService.generatedMonth();
+
             tvMonthAndYear.setText(calendarService.getMonthAndYear());
             adapter.setDays(itemDays);
         });

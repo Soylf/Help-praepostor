@@ -12,4 +12,13 @@ import lombok.Setter;
 public class ItemDay {
     private int day;
     private boolean isCurrentMonth;
+    private int month;
+    private int year;
+
+    public ItemDay(int day, boolean isCurrentMonth) {
+        this.day = day;
+        this.isCurrentMonth = isCurrentMonth;
+    }
+
+        public String ItemData() {return String.format("%s %s %s", day,month,year);}
 }
