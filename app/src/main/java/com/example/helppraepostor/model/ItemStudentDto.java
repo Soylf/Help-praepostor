@@ -11,10 +11,10 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ItemStudent {
+public class ItemStudentDto {
     private String name;
     private String age;
     private boolean selected; //Нужен только в UI
-    private List<ItemStudent> studentsPrecedency;
+    private List<ItemStudentDto> studentsPrecedency;
     private boolean presentStudent;
 }

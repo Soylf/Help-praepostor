@@ -1,29 +1,29 @@
 package com.example.helppraepostor.model.room.itemstudent.mapper;
 
 import com.example.helppraepostor.converter.ItemStudentConvertersGson;
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntity;
 
 public class ItemStudentMapper {
-    public static ItemStudentEntity toEntity(ItemStudent itemStudent) {
+    public static ItemStudentEntity toEntity(ItemStudentDto itemStudentDto) {
         ItemStudentEntity itemStudentEntity = new ItemStudentEntity();
-        itemStudentEntity.setName(itemStudent.getName());
-        itemStudentEntity.setAge(itemStudent.getAge());
-        itemStudentEntity.setPresentStudent(itemStudent.isPresentStudent());
+        itemStudentEntity.setName(itemStudentDto.getName());
+        itemStudentEntity.setAge(itemStudentDto.getAge());
+        itemStudentEntity.setPresentStudent(itemStudentDto.isPresentStudent());
         itemStudentEntity.setStudentsPrecedencyJson(
-                ItemStudentConvertersGson.fromList(itemStudent.getStudentsPrecedency())
+                ItemStudentConvertersGson.fromList(itemStudentDto.getStudentsPrecedency())
         );
         return itemStudentEntity;
     }
 
-    public static ItemStudent fromEntity(ItemStudentEntity itemStudentEntity) {
-        ItemStudent itemStudent = new ItemStudent();
-        itemStudent.setAge(itemStudentEntity.getAge());
-        itemStudent.setName(itemStudentEntity.getName());
-        itemStudent.setPresentStudent(itemStudentEntity.isPresentStudent());
-        itemStudent.setStudentsPrecedency(
+    public static ItemStudentDto fromEntity(ItemStudentEntity itemStudentEntity) {
+        ItemStudentDto itemStudentDto = new ItemStudentDto();
+        itemStudentDto.setAge(itemStudentEntity.getAge());
+        itemStudentDto.setName(itemStudentEntity.getName());
+        itemStudentDto.setPresentStudent(itemStudentEntity.isPresentStudent());
+        itemStudentDto.setStudentsPrecedency(
                 ItemStudentConvertersGson.toList(itemStudentEntity.getStudentsPrecedencyJson())
         );
-        return itemStudent;
+        return itemStudentDto;
     }
 }

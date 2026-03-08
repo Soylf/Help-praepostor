@@ -14,9 +14,7 @@ import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntit
 @Database(entities = {ItemStudentEntity.class}, version = 1, exportSchema = false)
 @TypeConverters(ItemStudentConvertersGson.class)
 public abstract class ItemStudentDatabase extends RoomDatabase {
-
     private static volatile ItemStudentDatabase INSTANCE;
-
     public abstract ItemStudentDao studentDao();
 
     public static ItemStudentDatabase getInstance(Context context) {

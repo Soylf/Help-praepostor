@@ -18,7 +18,7 @@ import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
 import com.example.helppraepostor.adapter.ItemStudentAdapter;
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 import com.example.helppraepostor.service.itemstudent.ItemStudentService;
 import com.example.helppraepostor.service.itemstudent.factory.ItemStudentServiceFactory;
 import com.google.android.material.snackbar.Snackbar;
@@ -69,7 +69,7 @@ public class SettingsActivity extends AppCompatActivity {
         AddSettingsStudentsRecyclerId.setLayoutManager(new LinearLayoutManager(this));
         AddSettingsStudentsRecyclerId.setAdapter(itemStudentAdapter);
 
-        List<ItemStudent> students;
+        List<ItemStudentDto> students;
         try {
             students = itemStudentService.getItemStudents();
         } catch (InterruptedException e) {
@@ -91,7 +91,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void saveStudentItem(View view) throws InterruptedException {
-        ItemStudent student = new ItemStudent();
+        ItemStudentDto student = new ItemStudentDto();
         EditText name = findViewById(R.id.editTextNameStudent);
         EditText age = findViewById(R.id.editTextAgeStudent);
 
@@ -99,10 +99,10 @@ public class SettingsActivity extends AppCompatActivity {
         student.setAge(age.getText().toString().trim());
 
         if(!itemStudentService.getItemStudents().isEmpty()){
-            List<ItemStudent> selected = itemStudentAdapter.getSelectedStudents();
+            List<ItemStudentDto> selected = itemStudentAdapter.getSelectedStudents();
             student.setStudentsPrecedency(selected);
 
-            List<ItemStudent> students =
+            List<ItemStudentDto> students =
                     itemStudentService.getItemStudents();
 
             itemStudentAdapter.setStudentPrecedency(students);
@@ -132,7 +132,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void deleteById(View view) throws InterruptedException {
-        List<ItemStudent> studentList = new ArrayList<>();
+        List<ItemStudentDto> studentList = new ArrayList<>();
         if(!itemStudentService.getItemStudents().isEmpty()){
             studentList.addAll(itemStudentAdapter.getSelectedStudents());
             AddSettingsStudentsRecyclerId.setAdapter(itemStudentAdapter);

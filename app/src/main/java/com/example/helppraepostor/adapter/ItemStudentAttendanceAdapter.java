@@ -9,8 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.helppraepostor.R;
-import com.example.helppraepostor.model.ItemDay;
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -21,12 +20,12 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class ItemStudentAttendanceAdapter extends RecyclerView.Adapter<ItemStudentAttendanceAdapter.ViewHolder> {
-    private List<ItemStudent> itemStudents;
+    private List<ItemStudentDto> itemStudentDtos;
     private String itemSelectedDay;
 
-    public void setStudentPrecedency(@NotNull List<ItemStudent> itemStudents) {
-        this.itemStudents.clear();
-        this.itemStudents.addAll(itemStudents);
+    public void setStudentPrecedency(@NotNull List<ItemStudentDto> itemStudentDtos) {
+        this.itemStudentDtos.clear();
+        this.itemStudentDtos.addAll(itemStudentDtos);
         notifyDataSetChanged();
     }
 
@@ -40,7 +39,7 @@ public class ItemStudentAttendanceAdapter extends RecyclerView.Adapter<ItemStude
 
     @Override
     public void onBindViewHolder(@NonNull ItemStudentAttendanceAdapter.ViewHolder holder, int position) {
-        ItemStudent student = itemStudents.get(position);
+        ItemStudentDto student = itemStudentDtos.get(position);
         holder.studentName.setText(student.getName());
 
         holder.studentName.setSelected(student.isSelected());
@@ -53,12 +52,12 @@ public class ItemStudentAttendanceAdapter extends RecyclerView.Adapter<ItemStude
 
     @Override
     public int getItemCount() {
-        return itemStudents.size();
+        return itemStudentDtos.size();
     }
 
-    public List<ItemStudent> getSelectedStudents() {
-        List<ItemStudent> selected = new ArrayList<>();
-        itemStudents.forEach(itemStudent -> {
+    public List<ItemStudentDto> getSelectedStudents() {
+        List<ItemStudentDto> selected = new ArrayList<>();
+        itemStudentDtos.forEach(itemStudent -> {
             if (itemStudent.isSelected()) {
                 selected.add(itemStudent);
             }

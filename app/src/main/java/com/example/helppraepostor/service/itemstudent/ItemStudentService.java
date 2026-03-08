@@ -1,13 +1,13 @@
 package com.example.helppraepostor.service.itemstudent;
 
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 
 import java.util.List;
 
 public interface ItemStudentService {
-    void saveStudent(ItemStudent student);
-    void updateStudent(ItemStudent student);
+    void saveStudent(ItemStudentDto student);
+    void updateStudent(ItemStudentDto student);
     void deleteStudent(String name);
     void deleteStudents();
-    List<ItemStudent> getItemStudents() throws InterruptedException;
+    List<ItemStudentDto> getItemStudents() throws InterruptedException;
 }

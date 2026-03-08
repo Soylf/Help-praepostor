@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.example.helppraepostor.converter.ItemStudentConvertersGson;
 import com.example.helppraepostor.database.ItemStudentDatabase;
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 import com.example.helppraepostor.model.room.itemstudent.dao.ItemStudentDao;
 import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntity;
 import com.example.helppraepostor.model.room.itemstudent.mapper.ItemStudentMapper;
@@ -20,13 +20,13 @@ public class ItemStudentRepository {
         this.dao = ItemStudentDatabase.getInstance(context).studentDao();
     }
 
-    public void save(ItemStudent itemStudent) {
+    public void save(ItemStudentDto itemStudentDto) {
         new Thread(() -> {
-            dao.insert(ItemStudentMapper.toEntity(itemStudent));
+            dao.insert(ItemStudentMapper.toEntity(itemStudentDto));
         }).start();
     }
 
-    public void update(ItemStudent student) {
+    public void update(ItemStudentDto student) {
         new Thread(() -> {
             dao.updateByName(student.getName(),
                     student.getAge(),
@@ -45,7 +45,7 @@ public class ItemStudentRepository {
         new Thread(dao::deleteAll).start();
     }
 
-    public List<ItemStudent> getAll() throws InterruptedException {
+    public List<ItemStudentDto> getAll() throws InterruptedException {
         List<ItemStudentEntity> entities = new ArrayList<>();
         Thread thread = new Thread(() -> {
             entities.addAll(dao.getAll());
@@ -53,7 +53,7 @@ public class ItemStudentRepository {
         thread.start();
         thread.join();//Ждет завершщенич
 
-        List<ItemStudent> students = new ArrayList<>();
+        List<ItemStudentDto> students = new ArrayList<>();
         entities.forEach(a -> {
             students.add(ItemStudentMapper.fromEntity(a));
         });

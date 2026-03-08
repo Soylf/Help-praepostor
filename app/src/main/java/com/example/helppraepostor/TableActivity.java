@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.helppraepostor.adapter.TableCalendarAdapter;
 import com.example.helppraepostor.model.ItemDay;
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 import com.example.helppraepostor.service.itemstudent.factory.ItemStudentServiceFactory;
 import com.example.helppraepostor.service.tablestudent.calendar.CalendarService;
 import com.example.helppraepostor.service.tablestudent.calendar.factory.CalendarServiceFactory;
@@ -46,15 +46,15 @@ public class TableActivity extends AppCompatActivity {
         TextView tvMonthAndYear = findViewById(R.id.tvMonthAndYear);
         tvMonthAndYear.setText(calendarService.getMonthAndYear());
 
-        List<ItemStudent> itemStudents;
+        List<ItemStudentDto> itemStudentDtos;
         try {
-            itemStudents = ItemStudentServiceFactory.getStudentService(this).getItemStudents();
+            itemStudentDtos = ItemStudentServiceFactory.getStudentService(this).getItemStudents();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
         RecyclerView calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         calendarRecyclerView.setLayoutManager(new GridLayoutManager(this, 7));
-        TableCalendarAdapter adapter = new TableCalendarAdapter(this, itemDays, itemStudents);
+        TableCalendarAdapter adapter = new TableCalendarAdapter(this, itemDays, itemStudentDtos);
         calendarRecyclerView.setAdapter(adapter);
 
         ImageButton btnPrevMonth = findViewById(R.id.btnPrevMonth);

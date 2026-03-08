@@ -2,7 +2,7 @@ package com.example.helppraepostor.service.itemstudent;
 
 import android.content.Context;
 
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 import com.example.helppraepostor.repository.ItemStudentRepository;
 
 import org.jetbrains.annotations.NotNull;
@@ -17,12 +17,12 @@ public class ItemStudentServiceImpl implements ItemStudentService {
     }
 
     @Override
-    public void saveStudent(@NotNull ItemStudent student) {
+    public void saveStudent(@NotNull ItemStudentDto student) {
         repository.save(student);
     }
 
     @Override
-    public void updateStudent(ItemStudent student) {
+    public void updateStudent(ItemStudentDto student) {
         repository.update(student);
     }
 
@@ -37,7 +37,7 @@ public class ItemStudentServiceImpl implements ItemStudentService {
     }
 
     @Override
-    public List<ItemStudent> getItemStudents() throws InterruptedException {
+    public List<ItemStudentDto> getItemStudents() throws InterruptedException {
        return repository.getAll();
     }
 

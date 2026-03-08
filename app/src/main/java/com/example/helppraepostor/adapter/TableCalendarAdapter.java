@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.helppraepostor.R;
 import com.example.helppraepostor.model.ItemDay;
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -23,14 +23,14 @@ import java.util.List;
 
 public class TableCalendarAdapter extends RecyclerView.Adapter<TableCalendarAdapter.DayViewHolder> {
     private final Context context;
-    private final List<ItemStudent> itemStudents;
+    private final List<ItemStudentDto> itemStudentDtos;
     private List<ItemDay> days;
 
     private int selectedPosition = -1;
 
-    public TableCalendarAdapter(Context context, List<ItemDay> days, List<ItemStudent> itemStudents) {
+    public TableCalendarAdapter(Context context, List<ItemDay> days, List<ItemStudentDto> itemStudentDtos) {
         this.context = context;
-        this.itemStudents = itemStudents;
+        this.itemStudentDtos = itemStudentDtos;
         this.days = days;
     }
 
@@ -76,7 +76,7 @@ public class TableCalendarAdapter extends RecyclerView.Adapter<TableCalendarAdap
 
             RecyclerView recyclerViewAttendanceDay = sheetView.findViewById(R.id.RecyclerViewAttendanceDay);
             recyclerViewAttendanceDay.setLayoutManager(new LinearLayoutManager(context));
-            ItemStudentAttendanceAdapter itemStudentAttendanceAdapter = new ItemStudentAttendanceAdapter(itemStudents, itemSelectedDay.ItemData());
+            ItemStudentAttendanceAdapter itemStudentAttendanceAdapter = new ItemStudentAttendanceAdapter(itemStudentDtos, itemSelectedDay.ItemData());
             recyclerViewAttendanceDay.setAdapter(itemStudentAttendanceAdapter);
 
             bottomSheetDialog.show();

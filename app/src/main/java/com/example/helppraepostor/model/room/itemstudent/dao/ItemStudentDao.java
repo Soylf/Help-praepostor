@@ -5,7 +5,6 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.example.helppraepostor.model.ItemStudent;
 import com.example.helppraepostor.model.room.itemstudent.entity.ItemStudentEntity;
 
 import java.util.List;

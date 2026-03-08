@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.helppraepostor.R;
-import com.example.helppraepostor.model.ItemStudent;
+import com.example.helppraepostor.model.ItemStudentDto;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -20,11 +20,11 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class ItemStudentAdapter extends RecyclerView.Adapter<ItemStudentAdapter.ViewHolder> {
-    private List<ItemStudent> studentPrecedency;
+    private List<ItemStudentDto> studentPrecedency;
 
-    public void setStudentPrecedency(@NotNull List<ItemStudent> itemStudents) {
+    public void setStudentPrecedency(@NotNull List<ItemStudentDto> itemStudentDtos) {
         this.studentPrecedency.clear();
-        this.studentPrecedency.addAll(itemStudents);
+        this.studentPrecedency.addAll(itemStudentDtos);
         notifyDataSetChanged();
     }
 
@@ -38,7 +38,7 @@ public class ItemStudentAdapter extends RecyclerView.Adapter<ItemStudentAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ItemStudent student = studentPrecedency.get(position);
+        ItemStudentDto student = studentPrecedency.get(position);
         holder.studentName.setText(student.getName());
 
         holder.studentName.setSelected(student.isSelected());
@@ -54,8 +54,8 @@ public class ItemStudentAdapter extends RecyclerView.Adapter<ItemStudentAdapter.
         return studentPrecedency.size();
     }
 
-    public List<ItemStudent> getSelectedStudents() {
-        List<ItemStudent> selected = new ArrayList<>();
+    public List<ItemStudentDto> getSelectedStudents() {
+        List<ItemStudentDto> selected = new ArrayList<>();
         studentPrecedency.forEach(itemStudent -> {
             if(itemStudent.isSelected()) {
                 selected.add(itemStudent);
