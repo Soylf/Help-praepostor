@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ItemStudentsAttendanceDto {
     private String itemData;
-    private String keyName;
+    private String studentName;
     private boolean attendance;
     private List<Boolean> attendanceLecture; //index = Lecture
 }

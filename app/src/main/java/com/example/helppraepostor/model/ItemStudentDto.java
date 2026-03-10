@@ -16,5 +16,5 @@ public class ItemStudentDto {
     private String age;
     private boolean selected; //Нужен только в UI
     private List<ItemStudentDto> studentsPrecedency;
-    private boolean presentStudent;
+    private boolean presentStudent; //Удалить как рудимент
 }
