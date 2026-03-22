@@ -9,6 +9,31 @@
     android:padding="16dp">
 
     <ImageButton
+        android:id="@+id/btnDuty"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="centerInside"
+        android:src="@drawable/baseline_table_rows_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#E6E6E6" />
+
+    <ImageButton
+        android:id="@+id/btnPlus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="centerInside"
+        android:src="@drawable/baseline_add_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#E6E6E6" />
+
+    <ImageButton
         android:id="@+id/btnAllStudent"
         android:layout_width="48dp"
         android:layout_height="48dp"
@@ -16,7 +41,7 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:scaleType="centerInside"
         android:src="@drawable/baseline_notes_24"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDuty"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="#E6E6E6" />
 
